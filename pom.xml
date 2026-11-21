@@ -9,14 +9,12 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>Practica2_JDBC_EMPLEADOS</name>
-  <description>A simple Practica2_JDBC_EMPLEADOS.</description>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <description>Práctica 2 de JDBC: acceso a la base de datos employees de MySQL con DAOs.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>

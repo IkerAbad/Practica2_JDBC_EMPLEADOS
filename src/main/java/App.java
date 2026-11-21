@@ -44,7 +44,7 @@ public class App {
 
         SalaryDao salaryDao = new SalaryDao();
         //Get Salario de empleado
-        System.out.println(salaryDao.getSalario("10001", new Date(1990,6,25)));
+        System.out.println(salaryDao.getSalario("10001", Date.valueOf("1990-06-25")));
 
         //Añadir nuevo salario empleado
 

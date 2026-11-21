@@ -5,18 +5,18 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static Connection con = null;
 
-    public static Connection getConnection(){
-        String url = "jdbc:mysql://192.168.56.101:3306/employees";
-        String user = "user";
-        String pass = "user";
+    // Valores por defecto de la máquina virtual de clase; se pueden cambiar con variables de entorno.
+    private static final String URL = System.getenv().getOrDefault("DB_URL", "jdbc:mysql://192.168.56.101:3306/employees");
+    private static final String USER = System.getenv().getOrDefault("DB_USER", "user");
+    private static final String PASS = System.getenv().getOrDefault("DB_PASS", "user");
 
-        try{
-            // Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(url,user,pass);
-        } catch( SQLException e){
+    public static Connection getConnection() {
+        try {
+            return DriverManager.getConnection(URL, USER, PASS);
+        } catch (SQLException e) {
             e.printStackTrace();
-        } return con;
+            return null;
+        }
     }
 }

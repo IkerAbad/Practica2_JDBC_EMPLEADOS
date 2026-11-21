@@ -103,7 +103,7 @@ public class DepartmentDao {
 
     public Employee managerDepartamento(String codigoDepartamento) {
         //++Devuelve un objeto de tipo Employee que corresponda al empleado “manager” del departamento cuyo código es codigoDepartamento. Nota: to_date será el mayor
-        String query = "SELECT * FROM employees e WHERE e.emp_no = (SELECT d.emp_no FROM dept_manager d WHERE d.emp_no = e.emp_no  and d.dept_no= ? ORDER BY d.to_date ASC)";
+        String query = "SELECT e.* FROM employees e JOIN dept_manager d ON e.emp_no = d.emp_no WHERE d.dept_no = ? ORDER BY d.to_date DESC LIMIT 1";
         boolean check = false;
         Employee e = new Employee();
 
